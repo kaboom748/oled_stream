@@ -1,4 +1,5 @@
-oled_stream2 ----------> ESP32 also Supported
+oled_stream2 ----------> ESP32
+oled_stream ----------> ESP8266
 
 
 https://github.com/user-attachments/assets/cfa111de-d13b-4607-85d4-f531fc8dd0be
