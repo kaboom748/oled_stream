@@ -1,4 +1,4 @@
-oled_stream2 for ESP32
+oled_stream2 for ESP32/ESP8266
 
 oled_stream for ESP8266
 
