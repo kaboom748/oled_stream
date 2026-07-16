@@ -1,4 +1,18 @@
+
+
 ````markdown
+
+esphome:
+  name: wemo-test
+  friendly_name: WEMO-TEST
+  platformio_options:
+    board_build.f_cpu: 160000000L #Pour les effets led 160mhz plus rapide
+      
+esp8266:
+  board: d1_mini
+  framework:
+    version: recommended
+
 globals:
   - id: current_contrast   # état interne du contrast
     type: float
