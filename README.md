@@ -1,3 +1,11 @@
+-Cette library ESPHOME est conçue pour ESP8266.
+-Elle permet d'afficher le contenu exact d'un afficheur i2c SD1306 et/ou avec support de framebuffer (pas MiPiSpi)
+-Le ESP8266 va lui même héberger le site web de visualisation sur le port spécifié dans le module.
+http://IP_ESP8266:8080/
+
+En gros cela permet d'avoir une copie EXACTE de l'afficheur i2c à distance via son navigateur internet.
+
+
 <img width="1280" height="860" alt="image" src="https://github.com/user-attachments/assets/f52e8a1a-6cf4-41e4-9fe5-8d62b1ed4a1c" />
 
 
