@@ -55,8 +55,13 @@ En gros cela permet d'avoir une copie EXACTE de l'afficheur i2c à distance via 
 
 <img width="1280" height="860" alt="image" src="https://github.com/user-attachments/assets/f52e8a1a-6cf4-41e4-9fe5-8d62b1ed4a1c" />
 
+<img width="894" height="780" alt="image" src="https://github.com/user-attachments/assets/7cbd78ea-3776-4ddd-b2ec-8e2c49721330" />
 
 ````markdown
+
+
+
+
 
 esphome:
   name: wemo-test
