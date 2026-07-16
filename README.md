@@ -1,3 +1,4 @@
+````markdown
 globals:
   - id: current_contrast   # état interne du contrast
     type: float
@@ -26,3 +27,4 @@ oled_stream:
     port: 8080
     contrast_lambda: |-
       return id(current_contrast);
+````
