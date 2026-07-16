@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/cfa111de-d13b-4607-85d4-f531fc8dd0be
+
 # ESPHome SSD1306 Remote Display Viewer for ESP8266
 
 This ESPHome component is designed for **ESP8266 devices** and allows remote visualization of an **I²C SSD1306 OLED display** directly from a web browser.
