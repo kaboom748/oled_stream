@@ -1,0 +1,20 @@
+esphome:
+  name: oled-stream-idf
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+
+external_components:
+  - source:
+      type: local
+      path: ../components
+    components: [oled_stream]
+
+packages:
+  common: !include common.yaml

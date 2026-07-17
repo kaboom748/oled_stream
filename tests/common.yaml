@@ -1,0 +1,18 @@
+# Shared by every platform test: everything except the board definition.
+logger:
+  baud_rate: 0
+
+wifi:
+  ssid: "test-ssid"
+  password: "test-password"
+
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    address: 0x3C
+    id: oled_display
+    update_interval: 200ms
+
+oled_stream:
+  - display_id: oled_display
+    port: 8080

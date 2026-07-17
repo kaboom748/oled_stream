@@ -1,0 +1,18 @@
+esphome:
+  name: oled-stream-esp8266
+
+esp8266:
+  board: d1_mini
+
+i2c:
+  sda: GPIO4
+  scl: GPIO5
+
+external_components:
+  - source:
+      type: local
+      path: ../components
+    components: [oled_stream]
+
+packages:
+  common: !include common.yaml

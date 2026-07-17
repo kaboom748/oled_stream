@@ -1,0 +1,70 @@
+---
+title: OLED Stream Component
+description: Mirror an ESPHome display's framebuffer into a web browser.
+---
+
+The `oled_stream` component mirrors the framebuffer of any
+[display](/components/display/) built on `DisplayBuffer` into a web browser, using
+a small web server hosted on the device itself. No cloud service, MQTT broker or
+Home Assistant instance is involved.
+
+Browse to `http://<device-ip>:8080/` and the page renders a pixel-exact copy of
+the physical screen.
+
+```yaml
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    address: 0x3C
+    id: oled_display
+
+oled_stream:
+  - display_id: oled_display
+    port: 8080
+```
+
+## Configuration variables
+
+- **display_id** (**Required**, :ref:`config-id`): The display to mirror.
+- **port** (*Optional*, int): TCP port for the viewer. Defaults to `8080`.
+- **contrast_lambda** (*Optional*, :ref:`lambda <config-lambda>`): Returns a
+  `float` between `0.0` and `1.0` that the viewer applies to the rendered image.
+
+The component is `MULTI_CONF`: declare several blocks on different ports to
+mirror several displays.
+
+The resolution is read from the display and cannot be configured.
+
+## Contrast
+
+ESPHome applies a display's `contrast:` on the panel itself and cannot read it
+back, so the viewer has no way of knowing about it. When contrast changes at
+runtime, feed the same value to `contrast_lambda`:
+
+```yaml
+globals:
+  - id: current_contrast
+    type: float
+    initial_value: "1.0"
+
+oled_stream:
+  - display_id: oled_display
+    contrast_lambda: |-
+      return id(current_contrast);
+```
+
+## Memory use
+
+The component allocates one copy of the framebuffer: 1 KB for a 128x64 mono
+display, 150 KB for a 320x240 RGB565 one. The latter does not fit on an ESP8266.
+If the allocation fails, the component marks itself as failed and logs an error.
+
+## Security
+
+The viewer has no authentication. Anyone who can reach the port can watch the
+screen. Do not forward it to the internet.
+
+## See Also
+
+- :doc:`/components/display/index`
+- :ghedit:`Edit`
