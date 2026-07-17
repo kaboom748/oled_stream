@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.esphome/
+secrets.yaml
+build/
+.venv/
+.DS_Store
+.ruff_cache/
