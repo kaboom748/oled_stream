@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: esphome config (${{ matrix.name }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: esp8266
+            file: tests/test.esp8266.yaml
+          - name: esp32-arduino
+            file: tests/test.esp32-arduino.yaml
+          - name: esp32-idf
+            file: tests/test.esp32-idf.yaml
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install esphome
+      - run: esphome config ${{ matrix.file }}
+
+  lint:
+    name: ruff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install ruff
+      - run: ruff check components/oled_stream/
+      - run: ruff format --check components/oled_stream/
