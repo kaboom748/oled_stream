@@ -1,3 +1,5 @@
+<img width="1262" height="833" alt="image" src="https://github.com/user-attachments/assets/c469e86f-0618-4c50-aa8b-49440daef55a" />
+
 # oled_stream
 
 [![CI](https://github.com/kaboom748/oled_stream/actions/workflows/ci.yml/badge.svg)](https://github.com/kaboom748/oled_stream/actions/workflows/ci.yml)
