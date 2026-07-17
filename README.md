@@ -1,3 +1,5 @@
+https://github.com/kaboom748/ssd1306_virtual ***NEW - You can use a virtual display for testing !!!!
+
 <img width="1262" height="833" alt="image" src="https://github.com/user-attachments/assets/c469e86f-0618-4c50-aa8b-49440daef55a" />
 
 # oled_stream
